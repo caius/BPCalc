@@ -25,7 +25,11 @@
                                         <rect key="frame" x="8" y="8" width="97" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <action selector="fieldChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="2eV-hy-d8o"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="u3o-oU-E7f">
                                         <rect key="frame" x="146" y="8" width="97" height="30"/>
@@ -101,7 +105,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KnV-GM-XB6">
-                                <rect key="frame" x="16" y="304" width="347" height="58"/>
+                                <rect key="frame" x="16" y="281" width="347" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dmS-je-hwm">
@@ -128,10 +132,28 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3o-99-M2G">
+                                <rect key="frame" x="16" y="218" width="343" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Calc"/>
+                                <connections>
+                                    <action selector="triggerCalculation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Wv-YK-kEn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="dia_1" destination="hMJ-mB-vh6" id="kDX-p7-W51"/>
+                        <outlet property="dia_2" destination="Ee4-D8-Sro" id="HB8-bc-gZt"/>
+                        <outlet property="dia_3" destination="jx6-Ne-7ZI" id="uab-Jc-dh1"/>
+                        <outlet property="dia_total" destination="dmS-je-hwm" id="rI6-gj-mJx"/>
+                        <outlet property="sys_1" destination="u3o-oU-E7f" id="GJg-Lj-Ys9"/>
+                        <outlet property="sys_2" destination="OWY-n0-iqJ" id="7ly-yT-01G"/>
+                        <outlet property="sys_3" destination="m4u-pX-RhV" id="CNc-Va-Qic"/>
+                        <outlet property="sys_total" destination="cIE-dy-bLb" id="I8t-lY-EKr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
