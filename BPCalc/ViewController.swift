@@ -24,8 +24,10 @@ class ViewController: UIViewController,UITextFieldDelegate {
   @IBAction func triggerCalculation(_ sender: UIButton) {
     NSLog("Value changed, need to recalculate")
     
-    dia_1.endEditing(false)
-    
+    for field in [dia_1, dia_2, dia_3, sys_1, sys_2, sys_3] {
+      field!.endEditing(false)
+    }
+
     var dataPoints = 0
     var diaValue = 0
     var sysValue = 0
@@ -61,21 +63,16 @@ class ViewController: UIViewController,UITextFieldDelegate {
 
   }
 
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
-    return true
-  }
-
   override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     
-    dia_1.delegate = self
-    sys_1.delegate = self
-    dia_2.delegate = self
-    sys_2.delegate = self
-    dia_3.delegate = self
-    sys_3.delegate = self
+      dia_1.delegate = self
+      sys_1.delegate = self
+      dia_2.delegate = self
+      sys_2.delegate = self
+      dia_3.delegate = self
+      sys_3.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
