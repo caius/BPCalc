@@ -53,9 +53,9 @@ class EntryTableViewController: UITableViewController {
         fatalError("The dequeued cell is not EntryTableViewCell type")
       }
 
-      // let entry = entries[indexPath.row]
-      // cell.systolic = entry.systolic
-      // cell.diastolic = entry.diastolic
+      let entry = entries[indexPath.row]
+      cell.systolicLabel.text = String(entry.systolic)
+      cell.diastolicLabel.text = String(entry.diastolic)
 
       return cell
     }
