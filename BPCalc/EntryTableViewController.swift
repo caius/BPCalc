@@ -10,54 +10,56 @@ import UIKit
 
 class EntryTableViewController: UITableViewController {
 
-  var entries = [Entry]()
+  let entries = EntryCollection()
   
-  func loadFakeEntries() {
-    entries += [
-      Entry(systolic: 120, diastolic: 80),
-      Entry(systolic: 115, diastolic: 75),
-      Entry(systolic: 125, diastolic: 85),
-    ]
+  @IBOutlet var resetButton: UIBarButtonItem!
+  @IBOutlet weak var navToolbar: UINavigationItem!
+
+  // MARK: UIViewController
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+//    loadFakeEntries()
+
+    NotificationCenter.default.addObserver(self, selector: #selector(entriesChanged(notification:)), name: .entryCollectionChanged, object: nil)
   }
 
-  override func viewDidLoad() {
-        super.viewDidLoad()
-
-      loadFakeEntries()
-    }
+  // MARK: View Handlers
 
   @IBAction func clearEntries(_ sender: UIBarButtonItem) {
-    NSLog("Removing all entries")
-    self.entries.removeAll()
-    self.tableView.reloadData()
+    entries.removeAll()
+    tableView.reloadData()
+  }
+
+  @IBAction func addEntry(_ sender: UIBarButtonItem) {
+    entries.append(Entry(systolic: 120, diastolic: 80))
   }
   
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  @objc func entriesChanged(notification: Notification) {
+    NSLog("Entries changed!")
+    tableView.reloadData()
+  }
+
+  // MARK: - Table view data source
+
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return entries._entries.count
+  }
+
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cellIdentifier = "EntryTableViewCell"
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? EntryTableViewCell else {
+      fatalError("The dequeued cell is not EntryTableViewCell type")
     }
 
-    // MARK: - Table view data source
+    let entry = entries.at(indexPath.row)
+    cell.systolicLabel.text = String(entry.systolic)
+    cell.diastolicLabel.text = String(entry.diastolic)
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return entries.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cellIdentifier = "EntryTableViewCell"
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? EntryTableViewCell else {
-        fatalError("The dequeued cell is not EntryTableViewCell type")
-      }
-
-      let entry = entries[indexPath.row]
-      cell.systolicLabel.text = String(entry.systolic)
-      cell.diastolicLabel.text = String(entry.diastolic)
-
-      return cell
-    }
-
+    return cell
+  }
 }

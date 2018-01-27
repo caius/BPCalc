@@ -13,12 +13,4 @@ class EntryTableViewCell: UITableViewCell {
   @IBOutlet weak var systolicLabel: UILabel!
   @IBOutlet weak var diastolicLabel: UILabel!
 
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-  }
-
 }

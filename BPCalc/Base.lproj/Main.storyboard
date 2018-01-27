@@ -72,13 +72,18 @@
                             <outlet property="delegate" destination="QvM-3K-R7Z" id="7Df-xt-EmX"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="nc7-VH-CSN">
-                        <barButtonItem key="leftBarButtonItem" title="Clear" id="3h9-GM-9QJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TwF-8T-gVQ">
                             <connections>
-                                <action selector="clearEntries:" destination="QvM-3K-R7Z" id="Q6V-Ck-QuX"/>
+                                <action selector="addEntry:" destination="QvM-3K-R7Z" id="I4U-Vv-2Pv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="navToolbar" destination="nc7-VH-CSN" id="lwj-oF-yS0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UNt-XH-yey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
