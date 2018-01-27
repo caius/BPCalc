@@ -10,44 +10,26 @@ import UIKit
 
 class EntryTableViewController: UITableViewController {
 
-  let entries = EntryCollection()
-  
-  @IBOutlet var resetButton: UIBarButtonItem!
+  private var _entries = [Entry]()
+
   @IBOutlet weak var navToolbar: UINavigationItem!
-
-  // MARK: UIViewController
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-//    loadFakeEntries()
-
-    NotificationCenter.default.addObserver(self, selector: #selector(entriesChanged(notification:)), name: .entryCollectionChanged, object: nil)
-  }
 
   // MARK: View Handlers
 
-  @IBAction func clearEntries(_ sender: UIBarButtonItem) {
-    entries.removeAll()
-    tableView.reloadData()
-  }
-
   @IBAction func addEntry(_ sender: UIBarButtonItem) {
-    entries.append(Entry(systolic: 120, diastolic: 80))
-  }
-  
-  @objc func entriesChanged(notification: Notification) {
-    NSLog("Entries changed!")
-    tableView.reloadData()
+    // TODO: pull the last values entered and use those here?
+    _entries.append(Entry(systolic: 120, diastolic: 80))
+    let newPath = IndexPath(row: (_entries.count - 1), section: 0)
+    tableView.insertRows(at: [newPath], with: .fade)
   }
 
   // MARK: - Table view data source
-
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return entries._entries.count
+    return _entries.count
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,10 +38,25 @@ class EntryTableViewController: UITableViewController {
       fatalError("The dequeued cell is not EntryTableViewCell type")
     }
 
-    let entry = entries.at(indexPath.row)
+    let entry = _entries[indexPath.row]
     cell.systolicLabel.text = String(entry.systolic)
     cell.diastolicLabel.text = String(entry.diastolic)
 
     return cell
+  }
+  
+  // MARK: Table view action handling
+
+  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      _entries.remove(at: indexPath.row)
+      tableView.deleteRows(at: [indexPath], with: .fade)
+    } else if editingStyle == .insert {
+      // Not used in our example, but if you were adding a new row, this is where you would do it.
+    }
   }
 }

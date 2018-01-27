@@ -10,7 +10,6 @@
 		09239819201CBD2F0012DA53 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09239818201CBD2F0012DA53 /* EntryTableViewCell.swift */; };
 		0923981B201CBD9B0012DA53 /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923981A201CBD9B0012DA53 /* EntryTableViewController.swift */; };
 		0923981D201CBDCC0012DA53 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923981C201CBDCC0012DA53 /* Entry.swift */; };
-		0923981F201D04940012DA53 /* EntryCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923981E201D04940012DA53 /* EntryCollection.swift */; };
 		099401BD2013BCAC00059340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099401BC2013BCAC00059340 /* AppDelegate.swift */; };
 		099401BF2013BCAC00059340 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099401BE2013BCAC00059340 /* ViewController.swift */; };
 		099401C22013BCAC00059340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099401C02013BCAC00059340 /* Main.storyboard */; };
@@ -33,7 +32,6 @@
 		09239818201CBD2F0012DA53 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		0923981A201CBD9B0012DA53 /* EntryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewController.swift; sourceTree = "<group>"; };
 		0923981C201CBDCC0012DA53 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		0923981E201D04940012DA53 /* EntryCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCollection.swift; sourceTree = "<group>"; };
 		099401B92013BCAC00059340 /* BPCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BPCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099401BC2013BCAC00059340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		099401BE2013BCAC00059340 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 				099401BE2013BCAC00059340 /* ViewController.swift */,
 				099401C02013BCAC00059340 /* Main.storyboard */,
 				0923981C201CBDCC0012DA53 /* Entry.swift */,
-				0923981E201D04940012DA53 /* EntryCollection.swift */,
 				0923981A201CBD9B0012DA53 /* EntryTableViewController.swift */,
 				09239818201CBD2F0012DA53 /* EntryTableViewCell.swift */,
 				099401C32013BCAC00059340 /* Assets.xcassets */,
@@ -215,7 +212,6 @@
 			files = (
 				0923981D201CBDCC0012DA53 /* Entry.swift in Sources */,
 				09239819201CBD2F0012DA53 /* EntryTableViewCell.swift in Sources */,
-				0923981F201D04940012DA53 /* EntryCollection.swift in Sources */,
 				099401BF2013BCAC00059340 /* ViewController.swift in Sources */,
 				0923981B201CBD9B0012DA53 /* EntryTableViewController.swift in Sources */,
 				099401BD2013BCAC00059340 /* AppDelegate.swift in Sources */,
