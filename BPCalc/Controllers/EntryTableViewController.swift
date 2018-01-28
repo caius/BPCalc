@@ -54,6 +54,11 @@ class EntryTableViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
+      // TODO: make sure to hide picker in case currently selected row was deleted
+      if tableView.cellForRow(at: indexPath)!.isEditing {
+        NSLog("Row being deleted is also being edited")
+      }
+
       entries.remove(at: indexPath.row)
       tableView.deleteRows(at: [indexPath], with: .fade)
     } else if editingStyle == .insert {
@@ -63,10 +68,12 @@ class EntryTableViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     NSLog("tableView:didSelectRowAt:")
+    tableView.cellForRow(at: indexPath)?.isEditing = true
   }
 
   override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
     NSLog("tableView:didDeselectRowAt:")
+    tableView.cellForRow(at: indexPath)?.isEditing = false
   }
 
 }
