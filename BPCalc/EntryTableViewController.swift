@@ -59,4 +59,14 @@ class EntryTableViewController: UITableViewController {
       // Not used in our example, but if you were adding a new row, this is where you would do it.
     }
   }
+
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    NSLog("tableView:didSelectRowAt:")
+
+  }
+
+  override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    NSLog("tableView:didDeselectRowAt:")
+  }
+
 }
