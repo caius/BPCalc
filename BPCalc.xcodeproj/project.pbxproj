@@ -10,6 +10,7 @@
 		09239819201CBD2F0012DA53 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09239818201CBD2F0012DA53 /* EntryTableViewCell.swift */; };
 		0923981B201CBD9B0012DA53 /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923981A201CBD9B0012DA53 /* EntryTableViewController.swift */; };
 		0923981D201CBDCC0012DA53 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923981C201CBDCC0012DA53 /* Entry.swift */; };
+		09239821201DB9000012DA53 /* EntryPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09239820201DB9000012DA53 /* EntryPickerController.swift */; };
 		099401BD2013BCAC00059340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099401BC2013BCAC00059340 /* AppDelegate.swift */; };
 		099401BF2013BCAC00059340 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099401BE2013BCAC00059340 /* ViewController.swift */; };
 		099401C22013BCAC00059340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099401C02013BCAC00059340 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		09239818201CBD2F0012DA53 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		0923981A201CBD9B0012DA53 /* EntryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewController.swift; sourceTree = "<group>"; };
 		0923981C201CBDCC0012DA53 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		09239820201DB9000012DA53 /* EntryPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPickerController.swift; sourceTree = "<group>"; };
 		09239826201DBD850012DA53 /* tailor.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = tailor.sh; sourceTree = "<group>"; };
 		099401B92013BCAC00059340 /* BPCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BPCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099401BC2013BCAC00059340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,34 @@
 			path = Scripts;
 			sourceTree = "<group>";
 		};
+		09239827201DBDD70012DA53 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				099401BE2013BCAC00059340 /* ViewController.swift */,
+				09239820201DB9000012DA53 /* EntryPickerController.swift */,
+				0923981A201CBD9B0012DA53 /* EntryTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		09239828201DBDE50012DA53 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09239818201CBD2F0012DA53 /* EntryTableViewCell.swift */,
+				099401C02013BCAC00059340 /* Main.storyboard */,
+				099401C52013BCAC00059340 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		09239829201DBDF50012DA53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0923981C201CBDCC0012DA53 /* Entry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		099401B02013BCAB00059340 = {
 			isa = PBXGroup;
 			children = (
@@ -96,14 +126,11 @@
 			isa = PBXGroup;
 			children = (
 				099401BC2013BCAC00059340 /* AppDelegate.swift */,
-				099401BE2013BCAC00059340 /* ViewController.swift */,
-				099401C02013BCAC00059340 /* Main.storyboard */,
-				0923981C201CBDCC0012DA53 /* Entry.swift */,
-				0923981A201CBD9B0012DA53 /* EntryTableViewController.swift */,
-				09239818201CBD2F0012DA53 /* EntryTableViewCell.swift */,
 				099401C32013BCAC00059340 /* Assets.xcassets */,
-				099401C52013BCAC00059340 /* LaunchScreen.storyboard */,
 				099401C82013BCAC00059340 /* Info.plist */,
+				09239827201DBDD70012DA53 /* Controllers */,
+				09239829201DBDF50012DA53 /* Models */,
+				09239828201DBDE50012DA53 /* Views */,
 			);
 			path = BPCalc;
 			sourceTree = "<group>";
@@ -238,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09239821201DB9000012DA53 /* EntryPickerController.swift in Sources */,
 				0923981D201CBDCC0012DA53 /* Entry.swift in Sources */,
 				09239819201CBD2F0012DA53 /* EntryTableViewCell.swift in Sources */,
 				099401BF2013BCAC00059340 /* ViewController.swift in Sources */,

@@ -13,6 +13,7 @@ class EntryTableViewController: UITableViewController {
   private var entries = [Entry]()
 
   @IBOutlet weak var navToolbar: UINavigationItem!
+  @IBOutlet var pressurePicker: UIPickerView!
 
   // MARK: View Handlers
 
@@ -62,7 +63,6 @@ class EntryTableViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     NSLog("tableView:didSelectRowAt:")
-
   }
 
   override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
