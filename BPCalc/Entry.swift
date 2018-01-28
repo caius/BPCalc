@@ -18,9 +18,9 @@ class Entry: NSObject {
     assert(systolic <= 300, "Systolic was greater than 300")
     assert(diastolic >= 0, "Systolic was zero or less")
     assert(diastolic <= 300, "Systolic was greater than 300")
-    
+
     self.systolic = systolic
     self.diastolic = diastolic
   }
-  
+
 }
