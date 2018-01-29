@@ -10,6 +10,22 @@ import UIKit
 
 class EntryTableViewCell: UITableViewCell {
 
+  private var _inputView: UIView?
+  override var inputView: UIView? {
+    get {
+      return _inputView
+    }
+    set {
+      _inputView = newValue
+    }
+  }
+
+  override var canBecomeFirstResponder: Bool {
+    get {
+      return true
+    }
+  }
+
   @IBOutlet weak var systolicLabel: UILabel!
   @IBOutlet weak var diastolicLabel: UILabel!
 

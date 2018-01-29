@@ -11,9 +11,10 @@ import UIKit
 class EntryTableViewController: UITableViewController {
 
   private var entries = [Entry]()
+//  let pickerController = EntryPickerController()
+  let pickerView = UIPickerView()
 
   @IBOutlet weak var navToolbar: UINavigationItem!
-  @IBOutlet var pressurePicker: UIPickerView!
 
   // MARK: View Handlers
 
@@ -68,12 +69,20 @@ class EntryTableViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     NSLog("tableView:didSelectRowAt:")
-    tableView.cellForRow(at: indexPath)?.isEditing = true
+    if let cell = tableView.cellForRow(at: indexPath) as? EntryTableViewCell {
+      cell.isEditing = true
+      cell.inputView = pickerView
+      _ = cell.becomeFirstResponder()
+    }
   }
 
   override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
     NSLog("tableView:didDeselectRowAt:")
-    tableView.cellForRow(at: indexPath)?.isEditing = false
+    if let cell = tableView.cellForRow(at: indexPath) as? EntryTableViewCell {
+      cell.resignFirstResponder()
+      cell.isEditing = false
+      cell.inputView = nil
+    }
   }
 
 }
